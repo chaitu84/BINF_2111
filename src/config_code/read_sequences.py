@@ -6,3 +6,12 @@ def read_fasta(filename): #file name is a place holder
 for record in SeqIO.parse(filename, "fasta"):
   sequences.append(record)
 
+return sequences
+
+if __name__ == "__main__":
+  hpv_sequences = read_fasta("data/hpv_sequences.fasta")
+
+for sequence in hpv_sequences:
+  print("Name:", sequence.id)
+  print("Sequence:", sequence.seq)
+  print()
